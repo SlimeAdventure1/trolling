@@ -32,7 +32,7 @@ setInterval(function() {
     document.getElementById("trollingDiv").style.display = began ? "" : "none"
     document.getElementById("trolling").textContent = getTrolling().toFixed(5);
     document.getElementById("trollingGain").textContent = getTrollingGain().toFixed(5);
-    document.getElementById("trollingPower").textContent = began ? ((1.25 / getTrollingGain()).toFixed(2)) : (1).toFixed(4);
+    document.getElementById("trollingPower").textContent = began ? ((1.25 / getTrollingGain()).toFixed(2)) : (1).toFixed(1.5);
     document.getElementById("trollingName").textContent = timePassed > 4.5 ? "complete and utter trolling" : "taxes"
     document.getElementById("theTrollHasEnteredTheRoom").style.opacity = getTrollingDisplay()
     document.getElementById("theTrollHasEnteredTheRoom").style["background-position"] = (2 * timePassed / (1 - Math.pow(getTrollingDisplay(), 0.002)))+"px"
