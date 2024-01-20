@@ -4,7 +4,7 @@ var trollingGoals = 0;
 
 setInterval(function() {
     function getTrolling() { return Math.min(10 - 10 / (timePassed + 1), 9.99999) }
-    function getTrollingGain() { return began ? (8 / Math.pow(timePassed+1, 2)) : 0 }
+    function getTrollingGain() { return began ? (5 / Math.pow(timePassed+1, 2)) : 0 }
     function getTrollingDisplay() { return Math.max(Math.pow(2, getTrolling()) / 768 - 1/3, 0) }
     function updateTrollingGoals() {
         let t = getTrolling();
@@ -32,7 +32,7 @@ setInterval(function() {
     document.getElementById("trollingDiv").style.display = began ? "" : "none"
     document.getElementById("trolling").textContent = getTrolling().toFixed(5);
     document.getElementById("trollingGain").textContent = getTrollingGain().toFixed(5);
-    document.getElementById("trollingPower").textContent = began ? ((5 / getTrollingGain()).toFixed(4)) : (1).toFixed(4);
+    document.getElementById("trollingPower").textContent = began ? ((2 / getTrollingGain()).toFixed(4)) : (1).toFixed(4);
     document.getElementById("trollingName").textContent = timePassed > 4.5 ? "complete and utter trolling" : "taxes"
     document.getElementById("theTrollHasEnteredTheRoom").style.opacity = getTrollingDisplay()
     document.getElementById("theTrollHasEnteredTheRoom").style["background-position"] = (2 * timePassed / (1 - Math.pow(getTrollingDisplay(), 0.002)))+"px"
